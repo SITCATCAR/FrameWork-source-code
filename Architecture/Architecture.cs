@@ -6,7 +6,7 @@ namespace FrameworkDesign
 
     public abstract class Architecture<T> where T : Architecture<T>, new()
     {
-        private static T mArchiteure;
+        private static T mArchiteure;//mArchiteure 本质是一个字典
         static void MakeSureArchitecture()
         {
             if (mArchiteure == null)
