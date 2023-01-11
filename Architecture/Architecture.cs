@@ -4,6 +4,13 @@ namespace FrameworkDesign
 
     //工具类 简化模块中注册功能 由添加的IOC类继承
 
+    public interface IArchitecture
+    {
+        void RegisterModel<T>(T model) where T : IModel;
+
+        void RegisterUtility<T>(T utility);
+        T GetUtility<T>() where T : class;
+    }
     public abstract class Architecture<T> where T : Architecture<T>, new()
     {
         private static T mArchiteure;//mArchiteure 本质是一个字典
